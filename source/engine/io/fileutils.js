@@ -54,6 +54,7 @@ export function RequestUrl (url, onProgress)
 	return new Promise ((resolve, reject) => {
 		let request = new XMLHttpRequest ();
 		request.open ('GET', url, true);
+		request.withCredentials = true;
 
 		request.onprogress = (event) => {
 			onProgress (event.loaded, event.total);
